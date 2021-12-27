@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 function VideoPlayer() {
     const context = useContext(SocketContext)
     const classes = useStyles();
-    const {call,callAccepted,myvideo,uservideo,stream,name,callRejected} = context;
+    const {call,callAccepted,myVideo,userVideo,stream,name,callEnded} = context;
     return (
         <>
 
@@ -35,15 +35,15 @@ function VideoPlayer() {
                 <Paper className={classes.paper}>
                     <Grid item xs={12} md ={6}>
                         <Typography variant="h5" gutterBottom>{name || 'User1'}</Typography>
-                        <video playsInline muted ref={myvideo} autoPlay className={classes.video}></video>
+                        <video playsInline muted ref={myVideo} autoPlay className={classes.video}></video>
                     </Grid>
                 </Paper>)}
                 
-                {callAccepted && !callRejected && (
+                {callAccepted && !callEnded && (
                 <Paper className={classes.paper}>
                     <Grid item xs={12} md ={6}>
                         <Typography variant="h5" gutterBottom>{call.name || 'user2'}</Typography>
-                        <video playsInline ref={uservideo} autoPlay className={classes.video}></video>
+                        <video playsInline ref={userVideo} autoPlay className={classes.video}></video>
                     </Grid>
                 </Paper>)}
             </Grid>
