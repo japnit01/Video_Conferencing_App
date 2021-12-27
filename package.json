@@ -1,0 +1,22 @@
+{
+  "name": "video-conferencing",
+  "version": "1.0.0",
+  "description": "A Video Confrencing App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Japnit Singh",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "react-copy-to-clipboard": "^5.0.4",
+    "simple-peer": "^9.11.0",
+    "socket.io": "^4.4.0",
+    "socket.io-client": "^4.4.0"
+  }
+}
