@@ -5,7 +5,7 @@ import Peer from 'simple-peer'
 const SocketContext = createContext();
 
 const socket = io('https://video-app-js.herokuapp.com/')
-
+// const socket = io('http://localhost:5000')
 const ContextProvider  = ({children}) =>{
     const [stream,setStream] = useState();
     const [me,setMe] = useState('');
@@ -25,7 +25,7 @@ const ContextProvider  = ({children}) =>{
             
             myvideo.current.srcObject = currentStream;
         })
-
+        console.log(me)
         socket.on("me",(id)=>setMe(id))
         socket.on('calluser',({from,name:callerName,signal})=>{
            setCall({isRecievedCall:true, from, name:callerName, signal}) 
